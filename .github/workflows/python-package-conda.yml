@@ -18,8 +18,13 @@ jobs:
       run: |
         # $CONDA is an environment variable pointing to the root of the miniconda directory
         echo $CONDA/bin >> $GITHUB_PATH
-    - name: Notebook to readme
+    - name: Notebook to markdown
       run: |
         pip install nbconvert
         jupyter nbconvert --to markdown mcst.ipynb
+    - name: Markdown to readme
+      run: |
         mv mcst.md README.md
+        git add README.md
+        git commit -m "chore: update readme"
+        git push
