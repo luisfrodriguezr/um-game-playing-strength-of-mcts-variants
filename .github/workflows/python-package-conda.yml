@@ -21,5 +21,5 @@ jobs:
     - name: Notebook to readme
       run: |
         pip install nbconvert
-        jupyter -nbconvert --to markdown mcst.ipynb
+        jupyter nbconvert --to markdown mcst.ipynb
         mv mcst.md README.md
