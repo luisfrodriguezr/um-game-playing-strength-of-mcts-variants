@@ -25,6 +25,10 @@ jobs:
     - name: Markdown to readme
       run: |
         mv mcst.md README.md
+        git config --global user.email "no-reply@github.com"
+        git config --global user.name "GitHub Actions"
         git add README.md
         git commit -m "chore: update readme"
         git push
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
