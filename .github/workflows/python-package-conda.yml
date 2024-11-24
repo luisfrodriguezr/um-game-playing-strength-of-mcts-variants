@@ -20,6 +20,6 @@ jobs:
         echo $CONDA/bin >> $GITHUB_PATH
     - name: Notebook to readme
       run: |
-        pip install notebook
+        pip install nbconvert
         jupyter -nbconvert --to markdown mcst.ipynb
         mv mcst.md README.md
